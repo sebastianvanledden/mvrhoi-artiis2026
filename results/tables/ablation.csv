@@ -1,0 +1,5 @@
+experiment_id,configuration,mode,mAP_QPIC,mAP_rare_QPIC,mAP_non_rare_QPIC
+baseline_detection,Baseline (VidHOI),detection,0.0000,0.0000,0.0000
+full_detection,MVRHOI (Ego+Gaze),detection,0.1450,0.0134,0.1976
+noego_detection,Ours (no synthetic ego),detection,0.1618,0.1091,0.1742
+no_detector_ft,Ours (no YOLO fine-tuning),detection,0.0000,0.0000,0.0000

@@ -1,0 +1,947 @@
+{
+  "classes": [
+    {
+      "class_name": "default",
+      "category": "object",
+      "description": "Physical object or category: default."
+    },
+    {
+      "class_name": "person",
+      "category": "subject",
+      "description": "Actor type: person."
+    },
+    {
+      "class_name": "door",
+      "category": "object",
+      "description": "Physical object or category: door."
+    },
+    {
+      "class_name": "container",
+      "category": "object",
+      "description": "Physical object or category: container."
+    },
+    {
+      "class_name": "button_switch",
+      "category": "object",
+      "description": "Physical object or category: button_switch."
+    },
+    {
+      "class_name": "knob_valve",
+      "category": "object",
+      "description": "Physical object or category: knob_valve."
+    },
+    {
+      "class_name": "lever_handle",
+      "category": "object",
+      "description": "Physical object or category: lever_handle."
+    },
+    {
+      "class_name": "hand_object",
+      "category": "object",
+      "description": "Body part: hand_object."
+    },
+    {
+      "class_name": "portable",
+      "category": "object",
+      "description": "Physical object or category: portable."
+    },
+    {
+      "class_name": "keycard",
+      "category": "object",
+      "description": "Physical object or category: keycard."
+    },
+    {
+      "class_name": "tool_device",
+      "category": "object",
+      "description": "Physical object or category: tool_device."
+    },
+    {
+      "class_name": "rideable",
+      "category": "object",
+      "description": "Physical object or category: rideable."
+    },
+    {
+      "class_name": "vehicle",
+      "category": "object",
+      "description": "Physical object or category: vehicle."
+    },
+    {
+      "class_name": "structure",
+      "category": "object",
+      "description": "Physical object or category: structure."
+    },
+    {
+      "class_name": "projectile",
+      "category": "object",
+      "description": "Physical object or category: projectile."
+    },
+    {
+      "class_name": "weapon",
+      "category": "object",
+      "description": "Physical object or category: weapon."
+    },
+    {
+      "class_name": "pickup",
+      "category": "object",
+      "description": "Physical object or category: pickup."
+    },
+    {
+      "class_name": "furniture",
+      "category": "object",
+      "description": "Physical object or category: furniture."
+    },
+    {
+      "class_name": "grappling_hook",
+      "category": "object",
+      "description": "Physical object or category: grappling_hook."
+    },
+    {
+      "class_name": "structure_item",
+      "category": "object",
+      "description": "Physical object or category: structure_item."
+    },
+    {
+      "class_name": "surface",
+      "category": "object",
+      "description": "Physical object or category: surface."
+    },
+    {
+      "class_name": "character",
+      "category": "subject",
+      "description": "Actor type: character."
+    },
+    {
+      "class_name": "non_human",
+      "category": "subject",
+      "description": "Actor type: non_human."
+    },
+    {
+      "class_name": "creature",
+      "category": "subject",
+      "description": "Actor type: creature."
+    },
+    {
+      "class_name": "menu",
+      "category": "object",
+      "description": "UI element: menu."
+    },
+    {
+      "class_name": "inventory",
+      "category": "object",
+      "description": "UI element: inventory."
+    },
+    {
+      "class_name": "text_field",
+      "category": "object",
+      "description": "UI element: text_field."
+    },
+    {
+      "class_name": "ui_widget",
+      "category": "object",
+      "description": "UI element: ui_widget."
+    },
+    {
+      "class_name": "hand (right)",
+      "category": "subject",
+      "description": "Body part: hand (right)."
+    },
+    {
+      "class_name": "hand (left)",
+      "category": "subject",
+      "description": "Body part: hand (left)."
+    },
+    {
+      "class_name": "open",
+      "category": "interaction",
+      "description": "Interaction type: open.",
+      "parent_class": "Use of Object",
+      "parent_class_id": "object_based.use_of_object"
+    },
+    {
+      "class_name": "close",
+      "category": "interaction",
+      "description": "Interaction type: close.",
+      "parent_class": "Use of Object",
+      "parent_class_id": "object_based.use_of_object"
+    },
+    {
+      "class_name": "press",
+      "category": "interaction",
+      "description": "Interaction type: press.",
+      "parent_class": "Use of Object",
+      "parent_class_id": "object_based.use_of_object"
+    },
+    {
+      "class_name": "turn",
+      "category": "interaction",
+      "description": "Interaction type: turn.",
+      "parent_class": "Movement",
+      "parent_class_id": "control_coordination.movement"
+    },
+    {
+      "class_name": "pull",
+      "category": "interaction",
+      "description": "Interaction type: pull.",
+      "parent_class": "Use of Object",
+      "parent_class_id": "object_based.use_of_object"
+    },
+    {
+      "class_name": "pick_up",
+      "category": "interaction",
+      "description": "Interaction type: pick_up.",
+      "parent_class": "Object Exchange",
+      "parent_class_id": "object_based.object_exchange"
+    },
+    {
+      "class_name": "drop",
+      "category": "interaction",
+      "description": "Interaction type: drop.",
+      "parent_class": "Object Exchange",
+      "parent_class_id": "object_based.object_exchange"
+    },
+    {
+      "class_name": "carry",
+      "category": "interaction",
+      "description": "Interaction type: carry.",
+      "parent_class": "Tactile",
+      "parent_class_id": "physical_contact.tactile"
+    },
+    {
+      "class_name": "insert",
+      "category": "interaction",
+      "description": "Interaction type: insert.",
+      "parent_class": "Object Exchange",
+      "parent_class_id": "object_based.object_exchange"
+    },
+    {
+      "class_name": "use",
+      "category": "interaction",
+      "description": "Interaction type: use.",
+      "parent_class": "Use of Object",
+      "parent_class_id": "object_based.use_of_object"
+    },
+    {
+      "class_name": "ride",
+      "category": "interaction",
+      "description": "Interaction type: ride.",
+      "parent_class": "Movement",
+      "parent_class_id": "control_coordination.movement"
+    },
+    {
+      "class_name": "drive",
+      "category": "interaction",
+      "description": "Interaction type: drive.",
+      "parent_class": "Movement",
+      "parent_class_id": "control_coordination.movement"
+    },
+    {
+      "class_name": "climb",
+      "category": "interaction",
+      "description": "Interaction type: climb.",
+      "parent_class": "Movement",
+      "parent_class_id": "control_coordination.movement"
+    },
+    {
+      "class_name": "throw",
+      "category": "interaction",
+      "description": "Interaction type: throw.",
+      "parent_class": "Use of Object",
+      "parent_class_id": "object_based.use_of_object"
+    },
+    {
+      "class_name": "shoot",
+      "category": "interaction",
+      "description": "Interaction type: shoot.",
+      "parent_class": "Aggressive",
+      "parent_class_id": "physical_contact.aggressive"
+    },
+    {
+      "class_name": "collect",
+      "category": "interaction",
+      "description": "Interaction type: collect.",
+      "parent_class": "Use of Object",
+      "parent_class_id": "object_based.use_of_object"
+    },
+    {
+      "class_name": "sit_or_lie",
+      "category": "interaction",
+      "description": "Interaction type: sit_or_lie.",
+      "parent_class": "Movements",
+      "parent_class_id": "body_language.movements"
+    },
+    {
+      "class_name": "use_grappling_hook",
+      "category": "interaction",
+      "description": "Interaction type: use_grappling_hook.",
+      "parent_class": "Use of Object",
+      "parent_class_id": "object_based.use_of_object"
+    },
+    {
+      "class_name": "build",
+      "category": "interaction",
+      "description": "Interaction type: build.",
+      "parent_class": "Construction",
+      "parent_class_id": "world_modifications.annotation_construction"
+    },
+    {
+      "class_name": "place",
+      "category": "interaction",
+      "description": "Interaction type: place.",
+      "parent_class": "Construction",
+      "parent_class_id": "world_modifications.annotation_construction"
+    },
+    {
+      "class_name": "craft",
+      "category": "interaction",
+      "description": "Interaction type: craft.",
+      "parent_class": "Construction",
+      "parent_class_id": "world_modifications.annotation_construction"
+    },
+    {
+      "class_name": "write_on",
+      "category": "interaction",
+      "description": "Interaction type: write_on.",
+      "parent_class": "Object manipulation",
+      "parent_class_id": "world_modifications.annotation_object_manipulation"
+    },
+    {
+      "class_name": "erase_on",
+      "category": "interaction",
+      "description": "Interaction type: erase_on.",
+      "parent_class": "Object manipulation",
+      "parent_class_id": "world_modifications.annotation_object_manipulation"
+    },
+    {
+      "class_name": "hit",
+      "category": "interaction",
+      "description": "Interaction type: hit.",
+      "parent_class": "Aggressive",
+      "parent_class_id": "physical_contact.aggressive"
+    },
+    {
+      "class_name": "kill",
+      "category": "interaction",
+      "description": "Interaction type: kill.",
+      "parent_class": "Aggressive",
+      "parent_class_id": "physical_contact.aggressive"
+    },
+    {
+      "class_name": "feed",
+      "category": "interaction",
+      "description": "Interaction type: feed.",
+      "parent_class": "Object Exchange",
+      "parent_class_id": "object_based.object_exchange"
+    },
+    {
+      "class_name": "greet",
+      "category": "interaction",
+      "description": "Interaction type: greet.",
+      "parent_class": "Waving",
+      "parent_class_id": "gestures.waving"
+    },
+    {
+      "class_name": "reload",
+      "category": "interaction",
+      "description": "Interaction type: reload.",
+      "parent_class": "Use of Object",
+      "parent_class_id": "object_based.use_of_object"
+    },
+    {
+      "class_name": "open_menu",
+      "category": "interaction",
+      "description": "Interaction type: open_menu.",
+      "parent_class": "Ingame Menus",
+      "parent_class_id": "system_menu.ingame_menus"
+    },
+    {
+      "class_name": "close_menu",
+      "category": "interaction",
+      "description": "Interaction type: close_menu.",
+      "parent_class": "Ingame Menus",
+      "parent_class_id": "system_menu.ingame_menus"
+    },
+    {
+      "class_name": "enter_text",
+      "category": "interaction",
+      "description": "Interaction type: enter_text.",
+      "parent_class": "Ingame Menus",
+      "parent_class_id": "system_menu.ingame_menus"
+    },
+    {
+      "class_name": "click_menu",
+      "category": "interaction",
+      "description": "Interaction type: click_menu.",
+      "parent_class": "Ingame Menus",
+      "parent_class_id": "system_menu.ingame_menus"
+    },
+    {
+      "class_name": "above",
+      "category": "relation",
+      "description": "Spatial or semantic relation: above.",
+      "parent_class": "Location based",
+      "parent_class_id": "control_coordination.location_based"
+    },
+    {
+      "class_name": "next_to",
+      "category": "relation",
+      "description": "Spatial or semantic relation: next_to.",
+      "parent_class": "Location based",
+      "parent_class_id": "control_coordination.location_based"
+    },
+    {
+      "class_name": "behind",
+      "category": "relation",
+      "description": "Spatial or semantic relation: behind.",
+      "parent_class": "Location based",
+      "parent_class_id": "control_coordination.location_based"
+    },
+    {
+      "class_name": "away",
+      "category": "relation",
+      "description": "Spatial or semantic relation: away.",
+      "parent_class": "Movement",
+      "parent_class_id": "control_coordination.movement"
+    },
+    {
+      "class_name": "towards",
+      "category": "relation",
+      "description": "Spatial or semantic relation: towards.",
+      "parent_class": "Movement",
+      "parent_class_id": "control_coordination.movement"
+    },
+    {
+      "class_name": "in_front_of",
+      "category": "relation",
+      "description": "Spatial or semantic relation: in_front_of.",
+      "parent_class": "Location based",
+      "parent_class_id": "control_coordination.location_based"
+    },
+    {
+      "class_name": "inside",
+      "category": "relation",
+      "description": "Spatial or semantic relation: inside.",
+      "parent_class": "Location based",
+      "parent_class_id": "control_coordination.location_based"
+    },
+    {
+      "class_name": "beneath",
+      "category": "relation",
+      "description": "Spatial or semantic relation: beneath.",
+      "parent_class": "Location based",
+      "parent_class_id": "control_coordination.location_based"
+    },
+    {
+      "class_name": "look_at",
+      "category": "interaction",
+      "description": "Interaction type: look_at.",
+      "parent_class": "Signals",
+      "parent_class_id": "body_language.signals",
+      "parent_assignment_note": "Assigned to Body Language / Signals for visual-attention labels; interpretation of the ambiguous original reference, not specified by the diagram."
+    },
+    {
+      "class_name": "watch",
+      "category": "interaction",
+      "description": "Interaction type: watch.",
+      "parent_class": "Signals",
+      "parent_class_id": "body_language.signals",
+      "parent_assignment_note": "Assigned to Body Language / Signals for visual-attention labels; interpretation of the ambiguous original reference, not specified by the diagram."
+    },
+    {
+      "class_name": "touch",
+      "category": "interaction",
+      "description": "Interaction type: touch.",
+      "parent_class": "Tactile",
+      "parent_class_id": "physical_contact.tactile"
+    },
+    {
+      "class_name": "hold",
+      "category": "interaction",
+      "description": "Interaction type: hold.",
+      "parent_class": "Tactile",
+      "parent_class_id": "physical_contact.tactile"
+    },
+    {
+      "class_name": "release",
+      "category": "interaction",
+      "description": "Interaction type: release.",
+      "parent_class": "Object Exchange",
+      "parent_class_id": "object_based.object_exchange"
+    },
+    {
+      "class_name": "on",
+      "category": "relation",
+      "description": "Spatial or semantic relation: on.",
+      "parent_class": "Location based",
+      "parent_class_id": "control_coordination.location_based"
+    },
+    {
+      "class_name": "under",
+      "category": "relation",
+      "description": "Spatial or semantic relation: under.",
+      "parent_class": "Location based",
+      "parent_class_id": "control_coordination.location_based"
+    },
+    {
+      "class_id": "taxonomy",
+      "class_name": "Interaction Taxonomy",
+      "category": "interaction_category",
+      "hierarchy_role": "diagram_node",
+      "description": "Root of the interaction taxonomy in the user-supplied diagram."
+    },
+    {
+      "class_id": "avatar_appearance",
+      "class_name": "Avatar Appearance",
+      "category": "interaction_category",
+      "hierarchy_role": "diagram_node",
+      "parent_class": "Interaction Taxonomy",
+      "parent_class_id": "taxonomy",
+      "description": "Interaction category: Avatar Appearance."
+    },
+    {
+      "class_id": "avatar_appearance.visible_outlook",
+      "class_name": "Visible Outlook",
+      "category": "interaction_category",
+      "hierarchy_role": "diagram_node",
+      "parent_class": "Avatar Appearance",
+      "parent_class_id": "avatar_appearance",
+      "description": "Interaction category: Visible Outlook."
+    },
+    {
+      "class_id": "avatar_appearance.equipment",
+      "class_name": "Equipment",
+      "category": "interaction_category",
+      "hierarchy_role": "diagram_node",
+      "parent_class": "Avatar Appearance",
+      "parent_class_id": "avatar_appearance",
+      "description": "Interaction category: Equipment."
+    },
+    {
+      "class_id": "avatar_appearance.clothes",
+      "class_name": "Clothes",
+      "category": "interaction_category",
+      "hierarchy_role": "diagram_node",
+      "parent_class": "Avatar Appearance",
+      "parent_class_id": "avatar_appearance",
+      "description": "Interaction category: Clothes."
+    },
+    {
+      "class_id": "avatar_appearance.postures",
+      "class_name": "Postures",
+      "category": "interaction_category",
+      "hierarchy_role": "diagram_node",
+      "parent_class": "Avatar Appearance",
+      "parent_class_id": "avatar_appearance",
+      "description": "Interaction category: Postures."
+    },
+    {
+      "class_id": "body_language",
+      "class_name": "Body Language (sub-conscious)",
+      "category": "interaction_category",
+      "hierarchy_role": "diagram_node",
+      "parent_class": "Interaction Taxonomy",
+      "parent_class_id": "taxonomy",
+      "description": "Interaction category: Body Language (sub-conscious)."
+    },
+    {
+      "class_id": "body_language.movements",
+      "class_name": "Movements",
+      "category": "interaction_category",
+      "hierarchy_role": "diagram_node",
+      "parent_class": "Body Language (sub-conscious)",
+      "parent_class_id": "body_language",
+      "description": "Interaction category: Movements."
+    },
+    {
+      "class_id": "body_language.expressions",
+      "class_name": "Expressions",
+      "category": "interaction_category",
+      "hierarchy_role": "diagram_node",
+      "parent_class": "Body Language (sub-conscious)",
+      "parent_class_id": "body_language",
+      "description": "Interaction category: Expressions."
+    },
+    {
+      "class_id": "body_language.signals",
+      "class_name": "Signals",
+      "category": "interaction_category",
+      "hierarchy_role": "diagram_node",
+      "parent_class": "Body Language (sub-conscious)",
+      "parent_class_id": "body_language",
+      "description": "Interaction category: Signals."
+    },
+    {
+      "class_id": "gestures",
+      "class_name": "Gestures",
+      "category": "interaction_category",
+      "hierarchy_role": "diagram_node",
+      "parent_class": "Interaction Taxonomy",
+      "parent_class_id": "taxonomy",
+      "description": "Interaction category: Gestures."
+    },
+    {
+      "class_id": "gestures.pointing",
+      "class_name": "Pointing",
+      "category": "interaction_category",
+      "hierarchy_role": "diagram_node",
+      "parent_class": "Gestures",
+      "parent_class_id": "gestures",
+      "description": "Interaction category: Pointing."
+    },
+    {
+      "class_id": "gestures.waving",
+      "class_name": "Waving",
+      "category": "interaction_category",
+      "hierarchy_role": "diagram_node",
+      "parent_class": "Gestures",
+      "parent_class_id": "gestures",
+      "description": "Interaction category: Waving."
+    },
+    {
+      "class_id": "gestures.shaking",
+      "class_name": "Shaking",
+      "category": "interaction_category",
+      "hierarchy_role": "diagram_node",
+      "parent_class": "Gestures",
+      "parent_class_id": "gestures",
+      "description": "Interaction category: Shaking."
+    },
+    {
+      "class_id": "gestures.signaling",
+      "class_name": "Signaling",
+      "category": "interaction_category",
+      "hierarchy_role": "diagram_node",
+      "parent_class": "Gestures",
+      "parent_class_id": "gestures",
+      "description": "Interaction category: Signaling."
+    },
+    {
+      "class_id": "language_communication",
+      "class_name": "Language-based Communication",
+      "category": "interaction_category",
+      "hierarchy_role": "diagram_node",
+      "parent_class": "Interaction Taxonomy",
+      "parent_class_id": "taxonomy",
+      "description": "Interaction category: Language-based Communication."
+    },
+    {
+      "class_id": "language_communication.chat_text_based",
+      "class_name": "Chat/Text-based",
+      "category": "interaction_category",
+      "hierarchy_role": "diagram_node",
+      "parent_class": "Language-based Communication",
+      "parent_class_id": "language_communication",
+      "description": "Interaction category: Chat/Text-based."
+    },
+    {
+      "class_id": "language_communication.speech",
+      "class_name": "Speech",
+      "category": "interaction_category",
+      "hierarchy_role": "diagram_node",
+      "parent_class": "Language-based Communication",
+      "parent_class_id": "language_communication",
+      "description": "Interaction category: Speech."
+    },
+    {
+      "class_id": "language_communication.pre_defined_phrases",
+      "class_name": "Pre-defined Phrases",
+      "category": "interaction_category",
+      "hierarchy_role": "diagram_node",
+      "parent_class": "Language-based Communication",
+      "parent_class_id": "language_communication",
+      "description": "Interaction category: Pre-defined Phrases."
+    },
+    {
+      "class_id": "language_communication.sign_language",
+      "class_name": "Sign language",
+      "category": "interaction_category",
+      "hierarchy_role": "diagram_node",
+      "parent_class": "Language-based Communication",
+      "parent_class_id": "language_communication",
+      "description": "Interaction category: Sign language."
+    },
+    {
+      "class_id": "control_coordination",
+      "class_name": "Control & Coordination",
+      "category": "interaction_category",
+      "hierarchy_role": "diagram_node",
+      "parent_class": "Interaction Taxonomy",
+      "parent_class_id": "taxonomy",
+      "description": "Interaction category: Control & Coordination."
+    },
+    {
+      "class_id": "control_coordination.tactics",
+      "class_name": "Tactics",
+      "category": "interaction_category",
+      "hierarchy_role": "diagram_node",
+      "parent_class": "Control & Coordination",
+      "parent_class_id": "control_coordination",
+      "description": "Interaction category: Tactics."
+    },
+    {
+      "class_id": "control_coordination.location_based",
+      "class_name": "Location based",
+      "category": "interaction_category",
+      "hierarchy_role": "diagram_node",
+      "parent_class": "Control & Coordination",
+      "parent_class_id": "control_coordination",
+      "description": "Interaction category: Location based."
+    },
+    {
+      "class_id": "control_coordination.formations",
+      "class_name": "Formations",
+      "category": "interaction_category",
+      "hierarchy_role": "diagram_node",
+      "parent_class": "Control & Coordination",
+      "parent_class_id": "control_coordination",
+      "description": "Interaction category: Formations."
+    },
+    {
+      "class_id": "control_coordination.movement",
+      "class_name": "Movement",
+      "category": "interaction_category",
+      "hierarchy_role": "diagram_node",
+      "parent_class": "Control & Coordination",
+      "parent_class_id": "control_coordination",
+      "description": "Interaction category: Movement."
+    },
+    {
+      "class_id": "physical_contact",
+      "class_name": "Physical Contact",
+      "category": "interaction_category",
+      "hierarchy_role": "diagram_node",
+      "parent_class": "Interaction Taxonomy",
+      "parent_class_id": "taxonomy",
+      "description": "Interaction category: Physical Contact."
+    },
+    {
+      "class_id": "physical_contact.aggressive",
+      "class_name": "Aggressive",
+      "category": "interaction_category",
+      "hierarchy_role": "diagram_node",
+      "parent_class": "Physical Contact",
+      "parent_class_id": "physical_contact",
+      "description": "Interaction category: Aggressive."
+    },
+    {
+      "class_id": "physical_contact.emotional",
+      "class_name": "Emotional",
+      "category": "interaction_category",
+      "hierarchy_role": "diagram_node",
+      "parent_class": "Physical Contact",
+      "parent_class_id": "physical_contact",
+      "description": "Interaction category: Emotional."
+    },
+    {
+      "class_id": "physical_contact.signals",
+      "class_name": "Signals",
+      "category": "interaction_category",
+      "hierarchy_role": "diagram_node",
+      "parent_class": "Physical Contact",
+      "parent_class_id": "physical_contact",
+      "description": "Interaction category: Signals."
+    },
+    {
+      "class_id": "physical_contact.tactile",
+      "class_name": "Tactile",
+      "category": "interaction_category",
+      "hierarchy_role": "diagram_node",
+      "parent_class": "Physical Contact",
+      "parent_class_id": "physical_contact",
+      "description": "Interaction category: Tactile."
+    },
+    {
+      "class_id": "physical_contact.defencive",
+      "class_name": "Defencive",
+      "category": "interaction_category",
+      "hierarchy_role": "diagram_node",
+      "parent_class": "Physical Contact",
+      "parent_class_id": "physical_contact",
+      "description": "Interaction category: Defencive."
+    },
+    {
+      "class_id": "world_modifications",
+      "class_name": "World Modifications",
+      "category": "interaction_category",
+      "hierarchy_role": "diagram_node",
+      "parent_class": "Interaction Taxonomy",
+      "parent_class_id": "taxonomy",
+      "description": "Interaction category: World Modifications."
+    },
+    {
+      "class_id": "world_modifications.location_based",
+      "class_name": "Location based",
+      "category": "interaction_category",
+      "hierarchy_role": "diagram_node",
+      "parent_class": "World Modifications",
+      "parent_class_id": "world_modifications",
+      "description": "Interaction category: Location based."
+    },
+    {
+      "class_id": "world_modifications.formations",
+      "class_name": "Formations",
+      "category": "interaction_category",
+      "hierarchy_role": "diagram_node",
+      "parent_class": "World Modifications",
+      "parent_class_id": "world_modifications",
+      "description": "Interaction category: Formations."
+    },
+    {
+      "class_id": "world_modifications.movement",
+      "class_name": "Movement",
+      "category": "interaction_category",
+      "hierarchy_role": "diagram_node",
+      "parent_class": "World Modifications",
+      "parent_class_id": "world_modifications",
+      "description": "Interaction category: Movement."
+    },
+    {
+      "class_id": "object_based",
+      "class_name": "Object based",
+      "category": "interaction_category",
+      "hierarchy_role": "diagram_node",
+      "parent_class": "Interaction Taxonomy",
+      "parent_class_id": "taxonomy",
+      "description": "Interaction category: Object based."
+    },
+    {
+      "class_id": "object_based.use_of_object",
+      "class_name": "Use of Object",
+      "category": "interaction_category",
+      "hierarchy_role": "diagram_node",
+      "parent_class": "Object based",
+      "parent_class_id": "object_based",
+      "description": "Interaction category: Use of Object."
+    },
+    {
+      "class_id": "object_based.object_exchange",
+      "class_name": "Object Exchange",
+      "category": "interaction_category",
+      "hierarchy_role": "diagram_node",
+      "parent_class": "Object based",
+      "parent_class_id": "object_based",
+      "description": "Interaction category: Object Exchange."
+    },
+    {
+      "class_id": "autonomous",
+      "class_name": "Autonomous / AI & Automatic",
+      "category": "interaction_category",
+      "hierarchy_role": "diagram_node",
+      "parent_class": "Interaction Taxonomy",
+      "parent_class_id": "taxonomy",
+      "description": "Interaction category: Autonomous / AI & Automatic."
+    },
+    {
+      "class_id": "autonomous.follow_me",
+      "class_name": "\"Follow-me\"",
+      "category": "interaction_category",
+      "hierarchy_role": "diagram_node",
+      "parent_class": "Autonomous / AI & Automatic",
+      "parent_class_id": "autonomous",
+      "description": "Interaction category: \"Follow-me\"."
+    },
+    {
+      "class_id": "autonomous.auto_actions",
+      "class_name": "Auto-actions",
+      "category": "interaction_category",
+      "hierarchy_role": "diagram_node",
+      "parent_class": "Autonomous / AI & Automatic",
+      "parent_class_id": "autonomous",
+      "description": "Interaction category: Auto-actions."
+    },
+    {
+      "class_id": "autonomous.reflection",
+      "class_name": "Reflection",
+      "category": "interaction_category",
+      "hierarchy_role": "diagram_node",
+      "parent_class": "Autonomous / AI & Automatic",
+      "parent_class_id": "autonomous",
+      "description": "Interaction category: Reflection."
+    },
+    {
+      "class_id": "system_menu",
+      "class_name": "System- & Menu Interactions",
+      "category": "interaction_category",
+      "hierarchy_role": "diagram_node",
+      "parent_class": "Interaction Taxonomy",
+      "parent_class_id": "taxonomy",
+      "description": "Interaction category: System- & Menu Interactions."
+    },
+    {
+      "class_id": "system_menu.system_menus",
+      "class_name": "System Menus",
+      "category": "interaction_category",
+      "hierarchy_role": "diagram_node",
+      "parent_class": "System- & Menu Interactions",
+      "parent_class_id": "system_menu",
+      "description": "Interaction category: System Menus."
+    },
+    {
+      "class_id": "system_menu.ingame_menus",
+      "class_name": "Ingame Menus",
+      "category": "interaction_category",
+      "hierarchy_role": "diagram_node",
+      "parent_class": "System- & Menu Interactions",
+      "parent_class_id": "system_menu",
+      "description": "Interaction category: Ingame Menus."
+    },
+    {
+      "class_id": "system_menu.dialog_menus",
+      "class_name": "Dialog Menus",
+      "category": "interaction_category",
+      "hierarchy_role": "diagram_node",
+      "parent_class": "System- & Menu Interactions",
+      "parent_class_id": "system_menu",
+      "description": "Interaction category: Dialog Menus."
+    },
+    {
+      "class_id": "system_menu.hud_interactions",
+      "class_name": "HUD Interactions",
+      "category": "interaction_category",
+      "hierarchy_role": "diagram_node",
+      "parent_class": "System- & Menu Interactions",
+      "parent_class_id": "system_menu",
+      "description": "Interaction category: HUD Interactions."
+    },
+    {
+      "class_id": "world_modifications.annotation_object_manipulation",
+      "class_name": "Object manipulation",
+      "category": "interaction_category",
+      "hierarchy_role": "annotation_extension",
+      "parent_class": "World Modifications",
+      "parent_class_id": "world_modifications",
+      "description": "Annotation grouping: Object manipulation; retained from the original JSON, absent from the supplied diagram."
+    },
+    {
+      "class_id": "world_modifications.annotation_construction",
+      "class_name": "Construction",
+      "category": "interaction_category",
+      "hierarchy_role": "annotation_extension",
+      "parent_class": "World Modifications",
+      "parent_class_id": "world_modifications",
+      "description": "Annotation grouping: Construction; retained from the original JSON, absent from the supplied diagram."
+    },
+    {
+      "class_id": "world_modifications.annotation_destruction",
+      "class_name": "Destruction",
+      "category": "interaction_category",
+      "hierarchy_role": "annotation_extension",
+      "parent_class": "World Modifications",
+      "parent_class_id": "world_modifications",
+      "description": "Annotation grouping: Destruction; retained from the original JSON, absent from the supplied diagram."
+    }
+  ],
+  "taxonomy_reference": {
+    "source": "User-supplied taxonomy3.png diagram in this conversation",
+    "comparison_scope": "Diagram category labels and parent-child relationships; annotation labels are not depicted.",
+    "diagram_root_id": "taxonomy",
+    "diagram_nodes_selector": {
+      "hierarchy_role": "diagram_node"
+    },
+    "annotation_extensions": [
+      "Object manipulation",
+      "Construction",
+      "Destruction"
+    ],
+    "label_note": "Display names follow the diagram, including Defencive. Use class_id and parent_class_id to resolve repeated names."
+  }
+}

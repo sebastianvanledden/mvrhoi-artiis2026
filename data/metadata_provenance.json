@@ -1,0 +1,122 @@
+[
+  {
+    "destination": "data/taxonomy/hoi_taxonomy_hierarchical.json",
+    "source": "Annotation/Taxonomie/hoi_taxonomy_hierarchical.json",
+    "sha256": "7f531112d212bd6df6f0c877ba934ae50964b84ece026d2c39dec782d0c3c341",
+    "original_source_sha256": "41a8d3a3674b3e39eef8fe0baf16e41280cb9118ea9431e72551c6f867191c41",
+    "modification_note": "Category hierarchy transcribed from user-supplied taxonomy3.png; original annotation labels retained, three non-diagram groupings marked annotation_extension, duplicate category names disambiguated by IDs."
+  },
+  {
+    "destination": "configs/vidat_config/mvrhoi_config.json",
+    "source": "Annotation/Taxonomie/hoi_taxonomy_template.json",
+    "sha256": "0375fdaa42361b03d74660eba33bf2b465d0f77466ef85a05d7349e12194c968",
+    "original_source_sha256": "446dce8762433d7af93de4412dd8369f91c0bcc56d220cd07ce557a5d15e2017",
+    "modification_note": "Repository copy differs from the originally inventoried source; historical experiment equivalence is not established."
+  },
+  {
+    "destination": "data/mappings/mvrhoi_object_mapping.json",
+    "source": "Annotation/Mapping/mvrhoi_object_mapping.json",
+    "sha256": "dff372949cd3d676ba4e1af5ee56da3ad376090af34284a009b6e598726903da"
+  },
+  {
+    "destination": "data/mappings/mvrhoi_predicate_mapping.json",
+    "source": "Annotation/Mapping/mvrhoi_predicate_mapping.json",
+    "sha256": "977b81b7efa846ca73164ff1496b6a47d20618001a60381a848ee56bdfc0d445"
+  },
+  {
+    "destination": "data/labels_mvrhoi/obj_categories.json",
+    "source": "/Volumes/Extreme SSD/MVRHOI/VidHOI_annotation/obj_categories.json",
+    "sha256": "181eecec68f7cf1ce209fd71b3ff394492fb7eb304df344d56155329a1ce5d4c",
+    "original_source_sha256": "37f35dc385f4f526418af076138741844adb52f74dafcc5415b09fb7c0936a98",
+    "modification_note": "Repository copy differs from the originally inventoried source; historical experiment equivalence is not established."
+  },
+  {
+    "destination": "data/labels_mvrhoi/pred_categories.json",
+    "source": "/Volumes/Extreme SSD/MVRHOI/VidHOI_annotation/pred_categories.json",
+    "sha256": "5540b8c6003ea9177dbabf4f4e2272560f8e55093cdd5c597c47390c29c97fce",
+    "original_source_sha256": "cb48b3a6ba78fb70d32e24c896d2a3252a6e6dfbb10970edfb2fc4e32ab62cc4",
+    "modification_note": "Repository copy differs from the originally inventoried source; historical experiment equivalence is not established."
+  },
+  {
+    "destination": "data/labels_mvrhoi/pred_split_categories.json",
+    "source": "/Volumes/Extreme SSD/MVRHOI/VidHOI_annotation/pred_split_categories.json",
+    "sha256": "99a6ff3ab426231aeecf4e06bbfbb1831cf236fd2e526262459dd0f4d9851d01",
+    "original_source_sha256": "56055c31f39c06d8f498735b8d35d80e6dcd066cd64dc553051157e7e451f00d",
+    "modification_note": "Repository copy differs from the originally inventoried source; historical experiment equivalence is not established."
+  },
+  {
+    "destination": "configs/mvrhoi_finetune_rtx3060.yaml",
+    "source": "hoi-prediction-gaze-transformer/configs/mvrhoi_finetune_rtx3060.yaml",
+    "sha256": "6adc25756376fe6092c04185103d86912f029abebcc23a1ed16c40e3c2695b02"
+  },
+  {
+    "destination": "configs/mvrhoi_finetune_rtx3060_unfreeze_tail.yaml",
+    "source": "hoi-prediction-gaze-transformer/configs/mvrhoi_finetune_rtx3060_unfreeze_tail.yaml",
+    "sha256": "2ff3c6b3ec8417a40b5fdff9c683e3ef58ebc49bd5669eb44e008985e7956441"
+  },
+  {
+    "destination": "configs/eval_mvrhoi_f0.yaml",
+    "source": "hoi-prediction-gaze-transformer/configs/eval_mvrhoi_f0.yaml",
+    "sha256": "22411aee456a887076143ac863fbb09ae2dbc466b6822c4b551fc51a8de56576"
+  },
+  {
+    "destination": "configs/metrics.yaml",
+    "source": "hoi-prediction-gaze-transformer/configs/metrics.yaml",
+    "sha256": "b173ad32e87e55d1b9704aeac1d6303256d1bc4654a953a6b0a0193444fdccd3"
+  },
+  {
+    "destination": "configs/detector_opt.yaml",
+    "source": "Evaluation/Yolov5-finetuning/opt.yaml",
+    "sha256": "7424dfcb1ed46eb50af195fd4f98f4fb463485a19bdad2ade166465effe4a00d"
+  },
+  {
+    "destination": "configs/detector_hyp.yaml",
+    "source": "Evaluation/Yolov5-finetuning/hyp.yaml",
+    "sha256": "e6a6d755ad525c4dac609334c528ec21c219d4e355096b9b9599206c12115f4b"
+  },
+  {
+    "destination": "results/metrics/baseline_oracle.csv",
+    "source": "Evaluation/STTran Eval MVRHOI_no_finetuning/mvrhoi_without_finetune/eval_sttran_mvrhoi/eval/all_metrics.csv",
+    "sha256": "f5125324b378954cf93fb54bd87b37372f3e6f413871103de6293ea86a9e8d4c"
+  },
+  {
+    "destination": "results/metrics/baseline_detection.csv",
+    "source": "Evaluation/STTran Eval MVRHOI_no_finetuning/mvrhoi_without_finetune/eval_sttran_mvrhoi/eval_det_yolov5l_deepsort/all_metrics.csv",
+    "sha256": "31ca25d9f37ee437b7542b88f0b3bb7ba02c226b445f913dd5c571c02ebab629"
+  },
+  {
+    "destination": "results/metrics/full_oracle.csv",
+    "source": "Evaluation/STTran Eval MVRHOI/eval_sttran_mvrhoi_unfreeze_tail_epoch9/eval/all_metrics.csv",
+    "sha256": "6c7732982bee79f9d43f9f9e9cf5a4e346f9d091e2b36793e4f00700eaf3b127"
+  },
+  {
+    "destination": "results/metrics/full_detection.csv",
+    "source": "Evaluation/STTran Eval MVRHOI/eval_sttran_mvrhoi_unfreeze_tail_epoch9/eval_det_yolov5l_deepsort_mvrhoi_ft/all_metrics.csv",
+    "sha256": "1e69f9cdc2eb6668cfb4dcb224a7e2b80420dc0d5b14a248955584f9667c3729"
+  },
+  {
+    "destination": "results/metrics/noego_detection.csv",
+    "source": "Evaluation/STTran Eval MVRHOI/eval_sttran_mvrhoi_noego_unfreeze_tail_epoch9/eval_det_yolov5l_deepsort_mvrhoi_ft/all_metrics.csv",
+    "sha256": "ea472381cb7b03d472168bf2b17ba846d5d67f170366a1af7bdf81b0e2fc4c5e"
+  },
+  {
+    "destination": "results/metrics/no_detector_ft.csv",
+    "source": "Evaluation/STTran Eval MVRHOI/eval_sttran_mvrhoi_dw_gaze_cross_org_yolo_collapsed/eval_det_yolov5l_deepsort/all_metrics.csv",
+    "sha256": "546804a4652f7e615acd79f3dbced64335a97365a0f0ceb2f14adca4d14297aa"
+  },
+  {
+    "destination": "data/labels_vidhoi/obj_categories.json",
+    "source": "hoi-prediction-gaze-transformer/vidhoi_related/obj_categories.json",
+    "sha256": "37f35dc385f4f526418af076138741844adb52f74dafcc5415b09fb7c0936a98"
+  },
+  {
+    "destination": "data/labels_vidhoi/pred_categories.json",
+    "source": "hoi-prediction-gaze-transformer/vidhoi_related/pred_categories.json",
+    "sha256": "cb48b3a6ba78fb70d32e24c896d2a3252a6e6dfbb10970edfb2fc4e32ab62cc4"
+  },
+  {
+    "destination": "data/labels_vidhoi/pred_split_categories.json",
+    "source": "mvrhoi-artiis2026/data/labels_vidhoi/pred_split_categories.json",
+    "sha256": "56055c31f39c06d8f498735b8d35d80e6dcd066cd64dc553051157e7e451f00d"
+  }
+]

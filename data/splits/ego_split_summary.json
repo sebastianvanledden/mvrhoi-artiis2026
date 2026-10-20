@@ -1,0 +1,16 @@
+{
+  "train": {
+    "annotation_entries": 19860,
+    "unique_frames": 9522,
+    "unique_videos": 55,
+    "source_sha256": "09519e2cf3f9ba6a9b720739e9adb6a37f974a3ccff90431545a6ba6099b648f"
+  },
+  "val": {
+    "annotation_entries": 4987,
+    "unique_frames": 2526,
+    "unique_videos": 34,
+    "source_sha256": "9e19a3027985d1fcd8a25e050f4c8a540e63fd234de6646fac6af67d88d9f5d4"
+  },
+  "shared_videos": 30,
+  "shared_frames": 0
+}

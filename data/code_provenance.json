@@ -1,0 +1,97 @@
+[
+  {
+    "destination": "scripts/hoi-prediction-gaze-transformer/convert_mvrhoi_to_yolo.py",
+    "source": "hoi-prediction-gaze-transformer/convert_mvrhoi_to_yolo.py",
+    "sha256": "279b64a9bad4f1f556afa7620ba65842fd28c6269cdf2f08028e04df8fb4e671",
+    "source_match": true
+  },
+  {
+    "destination": "scripts/hoi-prediction-gaze-transformer/finetune_mvrhoi.py",
+    "source": "hoi-prediction-gaze-transformer/finetune_mvrhoi.py",
+    "sha256": "edd786705ef6a6e4f52a6cde69f3d52ea80faf2f7e610af4f4c342e608048ed3",
+    "source_match": true
+  },
+  {
+    "destination": "scripts/hoi-prediction-gaze-transformer/misc_scripts/analyze_mvrhoi.py",
+    "source": "hoi-prediction-gaze-transformer/misc_scripts/analyze_mvrhoi.py",
+    "sha256": "0c6fff8d28666e0cb0716721fd7dee3814051a7e53254758e67eb5cbbd1e02ae",
+    "source_match": true
+  },
+  {
+    "destination": "scripts/hoi-prediction-gaze-transformer/misc_scripts/extract_mvrhoi_detection_gaze.py",
+    "source": "hoi-prediction-gaze-transformer/misc_scripts/extract_mvrhoi_detection_gaze.py",
+    "sha256": "5deb97dd6d3015dd7e3cd048aa0414b6abea8645a756f860c58f3c879b6dcf96",
+    "source_match": true
+  },
+  {
+    "destination": "scripts/hoi-prediction-gaze-transformer/misc_scripts/extract_mvrhoi_gaze.py",
+    "source": "hoi-prediction-gaze-transformer/misc_scripts/extract_mvrhoi_gaze.py",
+    "sha256": "e0bbcbb08d1000a6edee6ff0f725c3a80a3b7a25c8e01604e8702d7e8a158911",
+    "source_match": true
+  },
+  {
+    "destination": "scripts/hoi-prediction-gaze-transformer/misc_scripts/mvrhoi_annotation_to_demo_format.py",
+    "source": "hoi-prediction-gaze-transformer/misc_scripts/mvrhoi_annotation_to_demo_format.py",
+    "sha256": "298b9034a1b9a29dfdbd52c6adea807b860922ab8f29a81250f48ed478ee2c04",
+    "source_match": true
+  },
+  {
+    "destination": "scripts/hoi-prediction-gaze-transformer/misc_scripts/mvrhoi_convert_mvrhoi_to_vidhoi.py",
+    "source": "hoi-prediction-gaze-transformer/misc_scripts/mvrhoi_convert_mvrhoi_to_vidhoi.py",
+    "sha256": "7ea402c5a2c6dd32cf1c7c8e676a6346809bfd39ce73be8192f4ffd3cec8e5a8",
+    "source_match": true
+  },
+  {
+    "destination": "scripts/hoi-prediction-gaze-transformer/misc_scripts/mvrhoi_look_at_all_results_file.py",
+    "source": "hoi-prediction-gaze-transformer/misc_scripts/mvrhoi_look_at_all_results_file.py",
+    "sha256": "47eb670120be13ec8998caa74a7b1e27e6cf00fda6c9d382c022bec23da63869",
+    "source_match": true
+  },
+  {
+    "destination": "scripts/hoi-prediction-gaze-transformer/misc_scripts/mvrhoi_preview_vidhoi_annotation.py",
+    "source": "hoi-prediction-gaze-transformer/misc_scripts/mvrhoi_preview_vidhoi_annotation.py",
+    "sha256": "dd0a1e6854575ff401fcbc2077e2e632b226dded26164f2d2f5c61c17733c9dd",
+    "source_match": true
+  },
+  {
+    "destination": "scripts/hoi-prediction-gaze-transformer/misc_scripts/mvrhoi_split_vidhoi_annotations.py",
+    "source": "hoi-prediction-gaze-transformer/misc_scripts/mvrhoi_split_vidhoi_annotations.py",
+    "sha256": "5bb197cef73bfc58f34528f77d47e730c3a8266b7f26228d8dcbcbdad632d612",
+    "source_match": true
+  },
+  {
+    "destination": "scripts/hoi-prediction-gaze-transformer/misc_scripts/mvrhoi_video_preprocessing.py",
+    "source": "hoi-prediction-gaze-transformer/misc_scripts/mvrhoi_video_preprocessing.py",
+    "sha256": "ff6ddcb125d0ca87ca76741c516779a68e7d0df224efd3f8ae8a6054bfe63e23",
+    "source_match": true
+  },
+  {
+    "destination": "scripts/hoi-prediction-gaze-transformer/misc_scripts/video_info/info_mvr256.csv",
+    "source": "hoi-prediction-gaze-transformer/misc_scripts/video_info/info_mvr256.csv",
+    "sha256": "b0be5da3e0fc6b4aed9002c2394725e650d34842749ef84274df941325adb637",
+    "source_match": true
+  },
+  {
+    "destination": "scripts/hoi-prediction-gaze-transformer/requirements.txt",
+    "source": "hoi-prediction-gaze-transformer/requirements.txt",
+    "sha256": "bd3f8880c005c1bafb66e65a9d9724f1cac0625c87558d4ca2b33d229601fa06",
+    "source_match": true
+  },
+  {
+    "destination": "scripts/hoi-prediction-gaze-transformer/run_mvrhoi.py",
+    "source": "hoi-prediction-gaze-transformer/run_mvrhoi.py",
+    "sha256": "d96297e0ef9d1db3dd0da835ce512a61532bcfebf9462d0257f35b2fc04c52a9",
+    "source_match": true
+  },
+  {
+    "destination": "scripts/hoi-prediction-gaze-transformer/verify_mvrhoi_dataset.py",
+    "source": "hoi-prediction-gaze-transformer/verify_mvrhoi_dataset.py",
+    "sha256": "455c9d256eeff0bb1244c3c511f4e7084221f5ace967588754e64c6fcdc38f35",
+    "source_match": true
+  },
+  {
+    "destination": "configs/mvrhoi_vidhoi_yolov5.yaml",
+    "source": "hoi-prediction-gaze-transformer/configs/mvrhoi_vidhoi_yolov5.yaml",
+    "sha256": "2ebbd613b1797512f798d3b48a4434f0598741176fdcc32546ca5ebacc894009"
+  }
+]

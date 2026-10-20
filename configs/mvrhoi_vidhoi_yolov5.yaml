@@ -1,0 +1,88 @@
+# YOLOv5 config for MVRHOI dataset with VidHOI label space mapping
+# Use when convert_mvrhoi_to_yolo.py is run with --object-map to emit VidHOI-aligned IDs
+
+path: d:/mvrhoi_yolo5v_to_vidhoi_dataset
+train: images/train
+val: images/val
+
+nc: 78
+
+names:
+  0: person
+  1: car
+  2: guitar
+  3: chair
+  4: handbag
+  5: toy
+  6: baby_seat
+  7: cat
+  8: bottle
+  9: backpack
+  10: motorcycle
+  11: ball/sports_ball
+  12: laptop
+  13: table
+  14: surfboard
+  15: camera
+  16: sofa
+  17: screen/monitor
+  18: bicycle
+  19: vegetables
+  20: dog
+  21: fruits
+  22: cake
+  23: cellphone
+  24: cup
+  25: bench
+  26: snowboard
+  27: skateboard
+  28: bread
+  29: bus/truck
+  30: ski
+  31: suitcase
+  32: stool
+  33: bat
+  34: elephant
+  35: fish
+  36: baby_walker
+  37: dish
+  38: watercraft
+  39: scooter
+  40: pig
+  41: refrigerator
+  42: horse
+  43: crab
+  44: bird
+  45: piano
+  46: cattle/cow
+  47: lion
+  48: chicken
+  49: camel
+  50: electric_fan
+  51: toilet
+  52: sheep/goat
+  53: rabbit
+  54: train
+  55: penguin
+  56: hamster/rat
+  57: snake
+  58: frisbee
+  59: aircraft
+  60: oven
+  61: racket
+  62: faucet
+  63: antelope
+  64: duck
+  65: stop_sign
+  66: sink
+  67: kangaroo
+  68: stingray
+  69: turtle
+  70: tiger
+  71: crocodile
+  72: bear
+  73: microwave
+  74: traffic_light
+  75: panda
+  76: leopard
+  77: squirrel

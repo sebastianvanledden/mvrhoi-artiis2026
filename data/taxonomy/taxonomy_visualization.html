@@ -1,0 +1,546 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HOI Taxonomy Hierarchy Visualization</title>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <style>
+      body {
+        margin: 0;
+        padding: 20px;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background-color: #f5f5f5;
+      }
+
+      #container {
+        background: white;
+        border-radius: 8px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+      }
+
+      h1 {
+        margin: 0 0 10px 0;
+        color: #333;
+        font-size: 24px;
+      }
+
+      #controls {
+        margin-bottom: 20px;
+        padding: 15px;
+        background: #f8f9fa;
+        border-radius: 4px;
+      }
+
+      button {
+        padding: 8px 16px;
+        margin-right: 10px;
+        background: #007bff;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 14px;
+      }
+
+      button:hover {
+        background: #0056b3;
+      }
+
+      #search {
+        padding: 8px 12px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        width: 250px;
+        font-size: 14px;
+      }
+
+      .legend {
+        margin-top: 15px;
+        padding: 10px;
+        background: #fff;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        display: inline-block;
+      }
+
+      .legend-item {
+        display: inline-block;
+        margin-right: 20px;
+        font-size: 12px;
+      }
+
+      .legend-color {
+        display: inline-block;
+        width: 16px;
+        height: 16px;
+        border-radius: 3px;
+        margin-right: 5px;
+        vertical-align: middle;
+      }
+
+      #tree-container {
+        overflow: auto;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        background: white;
+      }
+
+      .node circle {
+        fill: #fff;
+        stroke: steelblue;
+        stroke-width: 2px;
+        cursor: pointer;
+      }
+
+      .node text {
+        font-size: 12px;
+        font-family: "Segoe UI", sans-serif;
+        cursor: pointer;
+      }
+
+      .node.category-interaction circle {
+        stroke: #ff6b6b;
+      }
+
+      .node.category-interaction_category circle {
+        stroke: #4ecdc4;
+      }
+
+      .node.category-object circle {
+        stroke: #95e1d3;
+      }
+
+      .node.category-subject circle {
+        stroke: #f38181;
+      }
+
+      .node.category-relation circle {
+        stroke: #aa96da;
+      }
+
+      .node--internal circle {
+        fill: lightsteelblue;
+      }
+
+      .node--leaf circle {
+        fill: white;
+      }
+
+      .node.highlighted circle {
+        stroke-width: 4px;
+        stroke: #ffd700;
+      }
+
+      .link {
+        fill: none;
+        stroke: #ccc;
+        stroke-width: 1.5px;
+      }
+
+      .tooltip {
+        position: absolute;
+        padding: 10px;
+        background: rgba(0, 0, 0, 0.8);
+        color: white;
+        border-radius: 4px;
+        pointer-events: none;
+        font-size: 12px;
+        max-width: 300px;
+        z-index: 1000;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container">
+      <h1>MVRHOI Taxonomy Hierarchy Visualization</h1>
+
+      <div id="controls">
+        <button id="expandBtn">Expand All</button>
+        <button id="collapseBtn">Collapse All</button>
+        <button id="resetBtn">Reset View</button>
+        <input type="text" id="search" placeholder="Search taxonomy..." />
+
+        <div class="legend">
+          <div class="legend-item">
+            <span class="legend-color" style="background: #ff6b6b"></span>
+            <span>Interaction</span>
+          </div>
+          <div class="legend-item">
+            <span class="legend-color" style="background: #4ecdc4"></span>
+            <span>Interaction Category</span>
+          </div>
+          <div class="legend-item">
+            <span class="legend-color" style="background: #95e1d3"></span>
+            <span>Object</span>
+          </div>
+          <div class="legend-item">
+            <span class="legend-color" style="background: #f38181"></span>
+            <span>Subject</span>
+          </div>
+          <div class="legend-item">
+            <span class="legend-color" style="background: #aa96da"></span>
+            <span>Relation</span>
+          </div>
+        </div>
+      </div>
+
+      <div id="tree-container"></div>
+    </div>
+
+    <script>
+      // Load the JSON data
+      const jsonPath = "./hoi_taxonomy_hierarchical.json";
+
+      let root, svg, g, tree, zoom;
+      let duration = 750;
+      let i = 0;
+
+      // Set dimensions
+      const margin = { top: 40, right: 120, bottom: 40, left: 120 };
+      const width = 1400 - margin.left - margin.right;
+      const height = 1000 - margin.top - margin.bottom;
+
+      // Create tooltip
+      const tooltip = d3
+        .select("body")
+        .append("div")
+        .attr("class", "tooltip")
+        .style("opacity", 0);
+
+      // Load and process the data
+      d3.json(jsonPath)
+        .then(function (data) {
+          const hierarchy = buildHierarchy(data.classes);
+          initializeTree(hierarchy);
+        })
+        .catch(function (error) {
+          console.error("Error loading JSON:", error);
+          d3.select("#tree-container").html(
+            '<p style="padding: 20px;">Error loading data. Make sure the JSON file is in the same directory.</p>',
+          );
+        });
+
+      function buildHierarchy(classes) {
+        // Create a map of all classes
+        const classMap = new Map();
+        const rootNodes = [];
+
+        // First pass: create all nodes
+        classes.forEach((cls) => {
+          classMap.set(cls.class_name, {
+            name: cls.class_name,
+            category: cls.category,
+            description: cls.description,
+            parent_class: cls.parent_class,
+            children: [],
+          });
+        });
+
+        // Second pass: build hierarchy
+        classes.forEach((cls) => {
+          const node = classMap.get(cls.class_name);
+          if (cls.parent_class && classMap.has(cls.parent_class)) {
+            const parent = classMap.get(cls.parent_class);
+            parent.children.push(node);
+          } else {
+            rootNodes.push(node);
+          }
+        });
+
+        // Group root nodes by category
+        const categoryGroups = {};
+        rootNodes.forEach((node) => {
+          if (!categoryGroups[node.category]) {
+            categoryGroups[node.category] = [];
+          }
+          categoryGroups[node.category].push(node);
+        });
+
+        // Create a super root
+        const hierarchyRoot = {
+          name: "HOI Taxonomy",
+          category: "root",
+          children: [],
+        };
+
+        // Add category groups
+        Object.keys(categoryGroups).forEach((category) => {
+          const categoryNode = {
+            name: category.toUpperCase(),
+            category: "category_root",
+            children: categoryGroups[category],
+          };
+          hierarchyRoot.children.push(categoryNode);
+        });
+
+        return hierarchyRoot;
+      }
+
+      function initializeTree(hierarchyData) {
+        // Create SVG
+        svg = d3
+          .select("#tree-container")
+          .append("svg")
+          .attr("width", width + margin.left + margin.right)
+          .attr("height", height + margin.top + margin.bottom);
+
+        g = svg
+          .append("g")
+          .attr("transform", `translate(${margin.left},${margin.top})`);
+
+        // Create tree layout
+        tree = d3.tree().size([height, width]);
+
+        // Create zoom behavior
+        zoom = d3
+          .zoom()
+          .scaleExtent([0.1, 3])
+          .on("zoom", (event) => {
+            g.attr("transform", event.transform);
+          });
+
+        svg.call(zoom);
+
+        // Initialize hierarchy
+        root = d3.hierarchy(hierarchyData);
+        root.x0 = height / 2;
+        root.y0 = 0;
+
+        // Collapse all children initially except first level
+        if (root.children) {
+          root.children.forEach(collapse);
+        }
+
+        update(root);
+      }
+
+      function collapse(d) {
+        if (d.children) {
+          d._children = d.children;
+          d._children.forEach(collapse);
+          d.children = null;
+        }
+      }
+
+      function expand(d) {
+        if (d._children) {
+          d.children = d._children;
+          d._children = null;
+        }
+        if (d.children) {
+          d.children.forEach(expand);
+        }
+      }
+
+      function update(source) {
+        // Compute the new tree layout
+        const treeData = tree(root);
+        const nodes = treeData.descendants();
+        const links = treeData.links();
+
+        // Normalize for fixed-depth
+        nodes.forEach((d) => {
+          d.y = d.depth * 180;
+        });
+
+        // Update nodes
+        const node = g
+          .selectAll("g.node")
+          .data(nodes, (d) => d.id || (d.id = ++i));
+
+        // Enter new nodes
+        const nodeEnter = node
+          .enter()
+          .append("g")
+          .attr("class", (d) => `node category-${d.data.category}`)
+          .attr("transform", (d) => `translate(${source.y0},${source.x0})`)
+          .on("click", click)
+          .on("mouseover", showTooltip)
+          .on("mouseout", hideTooltip);
+
+        nodeEnter
+          .append("circle")
+          .attr("r", 1e-6)
+          .style("fill", (d) => (d._children ? "lightsteelblue" : "#fff"));
+
+        nodeEnter
+          .append("text")
+          .attr("dy", ".35em")
+          .attr("x", (d) => (d.children || d._children ? -13 : 13))
+          .attr("text-anchor", (d) =>
+            d.children || d._children ? "end" : "start",
+          )
+          .text((d) => d.data.name);
+
+        // Update
+        const nodeUpdate = nodeEnter.merge(node);
+
+        nodeUpdate
+          .transition()
+          .duration(duration)
+          .attr("transform", (d) => `translate(${d.y},${d.x})`);
+
+        nodeUpdate
+          .select("circle")
+          .attr("r", 6)
+          .style("fill", (d) => (d._children ? "lightsteelblue" : "#fff"))
+          .attr("cursor", "pointer");
+
+        // Remove old nodes
+        const nodeExit = node
+          .exit()
+          .transition()
+          .duration(duration)
+          .attr("transform", (d) => `translate(${source.y},${source.x})`)
+          .remove();
+
+        nodeExit.select("circle").attr("r", 1e-6);
+
+        nodeExit.select("text").style("fill-opacity", 1e-6);
+
+        // Update links
+        const link = g.selectAll("path.link").data(links, (d) => d.target.id);
+
+        const linkEnter = link
+          .enter()
+          .insert("path", "g")
+          .attr("class", "link")
+          .attr("d", (d) => {
+            const o = { x: source.x0, y: source.y0 };
+            return diagonal(o, o);
+          });
+
+        const linkUpdate = linkEnter.merge(link);
+
+        linkUpdate
+          .transition()
+          .duration(duration)
+          .attr("d", (d) => diagonal(d.source, d.target));
+
+        link
+          .exit()
+          .transition()
+          .duration(duration)
+          .attr("d", (d) => {
+            const o = { x: source.x, y: source.y };
+            return diagonal(o, o);
+          })
+          .remove();
+
+        // Store old positions
+        nodes.forEach((d) => {
+          d.x0 = d.x;
+          d.y0 = d.y;
+        });
+      }
+
+      function diagonal(s, d) {
+        return `M ${s.y} ${s.x}
+                    C ${(s.y + d.y) / 2} ${s.x},
+                      ${(s.y + d.y) / 2} ${d.x},
+                      ${d.y} ${d.x}`;
+      }
+
+      function click(event, d) {
+        if (d.children) {
+          d._children = d.children;
+          d.children = null;
+        } else {
+          d.children = d._children;
+          d._children = null;
+        }
+        update(d);
+      }
+
+      function showTooltip(event, d) {
+        tooltip.transition().duration(200).style("opacity", 0.9);
+
+        let content = `<strong>${d.data.name}</strong><br/>`;
+        content += `Category: ${d.data.category}<br/>`;
+        if (d.data.description) {
+          content += `${d.data.description}`;
+        }
+        if (d.data.parent_class) {
+          content += `<br/>Parent: ${d.data.parent_class}`;
+        }
+
+        tooltip
+          .html(content)
+          .style("left", event.pageX + 10 + "px")
+          .style("top", event.pageY - 28 + "px");
+      }
+
+      function hideTooltip() {
+        tooltip.transition().duration(500).style("opacity", 0);
+      }
+
+      function expandAll() {
+        root.children.forEach(expand);
+        update(root);
+      }
+
+      function collapseAll() {
+        root.children.forEach(collapse);
+        update(root);
+      }
+
+      function resetView() {
+        svg
+          .transition()
+          .duration(750)
+          .call(
+            zoom.transform,
+            d3.zoomIdentity.translate(margin.left, margin.top),
+          );
+      }
+
+      function searchTree(searchText) {
+        // Clear previous highlights
+        g.selectAll(".node").classed("highlighted", false);
+
+        if (!searchText) return;
+
+        const searchLower = searchText.toLowerCase();
+
+        // Find matching nodes
+        root.descendants().forEach((d) => {
+          if (
+            d.data.name.toLowerCase().includes(searchLower) ||
+            (d.data.description &&
+              d.data.description.toLowerCase().includes(searchLower))
+          ) {
+            // Highlight the node
+            const nodeElement = g
+              .selectAll(".node")
+              .filter((node) => node.id === d.id);
+            nodeElement.classed("highlighted", true);
+
+            // Expand path to node
+            let current = d;
+            while (current.parent) {
+              current = current.parent;
+              if (current._children) {
+                current.children = current._children;
+                current._children = null;
+              }
+            }
+          }
+        });
+
+        update(root);
+      }
+
+      // Set up event listeners after DOM is loaded
+      document.getElementById("expandBtn").addEventListener("click", expandAll);
+      document
+        .getElementById("collapseBtn")
+        .addEventListener("click", collapseAll);
+      document.getElementById("resetBtn").addEventListener("click", resetView);
+      document.getElementById("search").addEventListener("input", function (e) {
+        searchTree(e.target.value);
+      });
+    </script>
+  </body>
+</html>
